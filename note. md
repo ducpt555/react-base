@@ -1,0 +1,53 @@
+- Viết MyComponent.js, có hai cách viêt: func và class
+- JSX CÚ PHÁP ĐẶC BIỆT
+- Trong Component có thể viết js, hạn chế là 1 component thì chỉ viêt được 1 phần tử.
+17. State.
+- là js object, miêu tả trạng thái cảu ứng dụng, state của component có thể được cập nhật.
+- Chức năng kiểm soát data hiện thị trên giao diện, ngay khi thay đổi thì sẽ cập nhât.
+18. React dev tool
+19. DOM Events - xử lý sự kiện với React
+- Hộ trợ các event: hầu hết....
+20. setState: cập nhập state cho React
+- Merge state => react class: nghĩa là nếu mình chỉ cập nhật một thuộc tính trong object thì nó đủ thông minh để hiểu là chỉ cập nhật thuộc tính đó và giữ lại các thuộc tính khác.
+21. from in react
+- Dùng event onChange với input để bắt sự kiện người dùng gõ bàn phím
+- Dùng event onSubmit với form để bắt sự kiện nhấn nút button, hoặc nhấn Enter
+Không dùng event onClick với button vì sẽ không bắt được hành động người dùng
+nhập input và nhấn Enter
+- Dùng event.preventDefault( ) để cancel hành động mặc định của event. Ở đây,
+đối với form và event submit, chúng ta sử dụng để không cho website bị load lại
+(refresh)
+22. Nesting Component - Component Cha Lồng Con
+- Vì sao? Chia một component ra nhiều component dễ viết, viết ngắn,..
+23. prop - properties
+- Vì sao? Là đển component con lấy giá trị từ component cha.
+24. Outputting list - Render Array/Object với React.
+- Một đoạn code giống nhau nhiều lần => phải tối ưu
+- DRY: don't repeat yourself
+25. conditional Outputting2.Câu điều kiện
+- Dùng câu điều kiện để “code ít hơn”
+- Syntax: condition ? <expression if true> : <expression if false> => sau điều kiện thì trả về một giá trị thôi chứ không thể là một logic thực hiện được.
+- Trong JSX thì: { }sẽ trả về một giá trị hoặc một chuỗi html, đầy là nơi ta viết xử lý js.
+- Dùng &&: {true && <div></div>} để hiện...
+- !: để lấy giá trả ngược lại
+29. fragment: <><\> bỏ di v
+30. variables: in ra trong runtun{string, number}. Còn obj,arr->{JSON.stringify(obj)}. Còn true/false thì ko hiện
+34. StateFul/Stateless Component
+    - Phân biệt Stateful/Stateless
+Đối với React, một component, có sử dụng State để kiểm soát data, thì gọi là Stateful.
+Còn với component, không sử dụng State, chỉ sử dụng props để hiển thị dữ liệu, thì được
+gọi là Stateless
+    - Cách chuyển đổi từ Stateful sang Stateless Component
+        - Sử dụng Arrow function
+        - Không sử dụng hàm constructor và keyword this
+        - Không sử dụng hàm render, thay vào đấy là keyword return
+        - Props được
+35. useState Hook - Kiểm Soát State với Function Component
+- useState dùng hook sử dụng được state với function component.
+- syntax: const [ state, setState ] = useState(initValue);
+36. Bài Tập: Sử Dụng useState Hook.
+- React chuyển sang hook => theo react vì nó phát triển theo cách này.
+38 useEffect Hook - Sử Dụng LifeCycle với React Function Component
+    - Đối với Function component, code sẽ chạy theo thứ tự từ trên xuống dưới.
+    - Sử dụng useEffect Hook như sau:
+        - useEffect ( function_xử_lý, các_biến_phụ_thuộc )
