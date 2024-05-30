@@ -51,3 +51,35 @@ gọi là Stateless
     - Đối với Function component, code sẽ chạy theo thứ tự từ trên xuống dưới.
     - Sử dụng useEffect Hook như sau:
         - useEffect ( function_xử_lý, các_biến_phụ_thuộc )
+47. Dùng bootstrap để tạo các html, css, js...nó là framework của cả 3 cái đó. Key word: react bootstrap.
+48. Làm thế nào để bấm vào thì nó chuyển sang trang khác của web của mình(ví dụ như bấm vào trên facebook thì bấm vào feeds hay chuyển sang trang cá nhân thì không reload lại trang). Tóm lại là điều hướng sang trang khác mà không load lại.
+ ---> Dùng: react router  -> nó có thẻ link( sẽ preventDefault:ngăn chặn) sẽ điều hướng mà không cần reload.
+ ---> Để dùng: react router thì cần cài thư viện...
+ ---> Tất nhiên là cần Import vào...để có thể hoạt động..thư viện mà.
+ Bản chất của điều hướng trang là gì?
+ - Nó Là từ một trang gốc đúng chứ ---> Bấm vào một thành phần nào đó như sẽ chuyển hướng, trong HTMl có thẻ <a>.
+ - Nhưng thẻ <a> thì nó reload trang, và react có thằng thẻ link tương tự nhưng không reload.
+ ---> Đã xử lý phần bấm vào thì chuyển và không reload --> <link to = "/..">
+ - Vậy, bấm vào sẽ điều hướng đến trang khác --> phải có url để dẫn tới:
+    - React có thư viện react router, nó sẽ giúp cho biết url và dẫn đến component chứa trang tương ứng:
+    ```
+     <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/user" element={<User />} />
+        <Route path="/admin" element={<Admin />} />
+      </Routes>
+    </BrowserRouter>
+    ```
+    - Mà React thì render từ index.js - App.js ...Thì App là trang gốc, tức chứa có phần để trỏ đến trang khác...
+    => để nó là "/". Phía dưới là url và các component của trang tương ứng.
+49. Nesting router: Nếu muốn từ web cha điều hướng sang web con mà vẫn giữ phần nội dung như Header thì làm sao?
+    - Kế thừa hiển thì từ trang web cha,... và dùng <Outlet/> để gọi nội dung của web con cần hiện thị.
+    - Thức ra đây không phải là kế thừa, mà xem nó fix cứng ở các trang thì đúng,... -> bài 51.
+50. Active Link - navlink ---> Ví dụ: Home user... là phần header của wen cha -> điều hướng sang user vẫn dữ header dùng nesting..
+    -> để nó nổi phần user trên header lên -> class: active trong bootstrap
+    -> react thì dùng <NavLink> => auto có thẻ đó.
+51. - Bản chất phần <Outlet> là để hiện thị phần nội dung của các web con + cái fix cứng như phần Header.
+    -> Vậy giờ mình muốn bấm vào trang thì cái trang tổng có dữ liệu nghĩa là: HEADER(fix cứng) + nội dung main.
+    -> Index router <- Nó là phần kết với với url tổng.
+    -> Chịu trách nhiệm hiện thị phần nội dung trong trang tổng trên(HEADER(cai mà fix cứng) + nội dung).
